@@ -3,23 +3,27 @@ package tarea8;
 import java.util.Scanner;
 
 public class Factorial {
-
-	Scanner scanner = new Scanner(System.in);
-	
+    
 	public void factorNumeros () {
-		System.out.println("Escribe un numero");
-		int numero = scanner.nextInt();
-		
-		int  factorial= 33;
-		
-		int i =1;
-		
-		do {
-			 int factor =factorial*numero;
-			i++;
-		}
-		while(i< factorial);
-		System.out.println("El factorial de " + numero + " es: " + factorial);
-		
-	}
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Escribe un número: ");
+        int numero = scanner.nextInt();
+        
+        int[] factorial = new int[numero + 1];
+        
+        factorial[0] = 1;
+        
+        for (int i = 1; i <= numero; i++) {
+            factorial[i] = factorial[i - 1] * i;
+        }
+        
+        System.out.println("El factorial de " + numero + " es: " + factorial[numero]);
+    }
 }
+
+
+
+
+
+
